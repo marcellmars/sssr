@@ -8,9 +8,9 @@ If we run:
         sssr.py -d example.com
 
 it will generate three files in secrets/ directory:
- - example.com.key (a private key of the generated SSL certificate. if used e.g. with ngins it could be copied to /etc/ssl/private/example.com.key)
- - example.com.crt (a SSL certificate which e.g. nginx will serve to its clients and usually it gets copied to /etc/ssl/certs/example.com.crt)
- - example.com_cacert.pem (this is the Certificate Authority file which (self)signed the certificate. This is the file which could be imported to web browsers' SSL settings. It won't bother anymore anyone who does it.)
+ - *example.com.key* (a private key of the generated SSL certificate. if used e.g. with nginx it could be copied to */etc/ssl/private/example.com.key*)
+ - *example.com.crt* (a SSL certificate which e.g. nginx will serve to its clients and usually it gets copied to */etc/ssl/certs/example.com.crt*)
+ - *example.com_cacert.pem* (this is the Certificate Authority file who herself (self)signed the certificate. This is the file which could be imported to web browsers' SSL settings. In _Firefox_ it is enough to open *example.com\_cacert.pem* via http://path_to_file/example.com_cacert.pem or just open it as regular local file. In _Chrome_ one should first open *[Manage certificates]* after getting to *chrome://settings/search#ssl* It won't bother anymore anyone who does it.)
 
 Adding more info looks more trustworthy:
 
@@ -18,7 +18,7 @@ Adding more info looks more trustworthy:
 
 ### write it into file
 
-If one prefers to hardcode the info for SSL certificate into sssr.py it should find DISTINGUISHED_NAME at the top of the sssr.py:
+If one prefers to hardcode the info for SSL certificate into *sssr.py* it should find *DISTINGUISHED_NAME* python dict at the top of the *sssr.py*:
 
         DISTINGUISHED_NAME = {"domain": "example.com",
                       "C": "US",
