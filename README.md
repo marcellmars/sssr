@@ -7,7 +7,7 @@ If we run:
 
         sssr.py -d example.com
 
-it will generate three files in secrets/ directory:
+it will generate three files in **secrets/** directory (relative to where the script sits):
  - **example.com.key** (a private key of the generated SSL certificate. if used e.g. with nginx it could be copied to **/etc/ssl/private/example.com.key**)
  - **example.com.crt** (a SSL certificate which e.g. nginx will serve to its clients and usually it gets copied to **/etc/ssl/certs/example.com.crt**)
  - **example.com_cacert.pem** (this is the Certificate Authority file who herself (self)signed the certificate. This is the file which could be imported to web browsers' SSL settings. In _Firefox_ it is enough to open **example.com_cacert.pem** via **http://path_to_file/example.com_cacert.pem** or just open it as regular local file. In _Chrome_ one should first open **[Manage certificates]** after getting to **chrome://settings/search#ssl**. After importing the **example.com_cacert.pem** in browser it won't bother the user anymore with non-trusted cert.)
