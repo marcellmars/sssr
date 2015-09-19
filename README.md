@@ -1,7 +1,6 @@
-# sssr
-SslSeflSigneR
+# sssr - SslSelfSigneR
 
-## run it a from command line
+### run it a from command line
 
 Let's say we want to do wildcard self-signed SSL certificate for example.com.
 If we run:
@@ -17,7 +16,8 @@ Adding more info looks more trustworthy:
 
         sssr.py --domain-name example.com --common-name "Example Inc" --country US --state NY --location "New York" --organization "Example Inc" --organization-unit "SSL Unit of Example Inc"
 
-## write it into file
+### write it into file
+
 If one prefers to hardcode the info for SSL certificate into sssr.py it should find DISTINGUISHED_NAME at the top of the sssr.py:
 
         DISTINGUISHED_NAME = {"domain": "example.com",
