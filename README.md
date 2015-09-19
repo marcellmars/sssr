@@ -20,7 +20,8 @@ Adding more info looks more trustworthy:
 
 If one prefers to hardcode the info for SSL certificate into **sssr.py** it should find **DISTINGUISHED_NAME** python dict at the top of the **sssr.py**:
 
-        DISTINGUISHED_NAME = {"domain": "example.com",
+```
+DISTINGUISHED_NAME = {"domain": "example.com",
                       "C": "US",
                       "ST": "Maryland",
                       "L": "Baltimore",
@@ -28,6 +29,8 @@ If one prefers to hardcode the info for SSL certificate into **sssr.py** it shou
                       "OU": "[let's generate certs]",
                       "CN": "example.com"}
 
+```
+                      
 If that's the case every time one runs:
 
         sssr.py
